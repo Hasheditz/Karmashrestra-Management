@@ -64,7 +64,7 @@ const Login = () => {
 						</Link>
 						|
 						<Link to="/products" style={{ alignSelf: "flex-start",color: "#4e54c8" }}>
-							<p style={{ padding: "0 5px" }}>Product Page</p>
+							<p style={{ padding: "0 5px" }}>Student Page</p>
 						</Link>
 						</div>
 						{error && <div className={styles.error_msg}>{error}</div>}

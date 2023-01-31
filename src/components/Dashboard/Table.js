@@ -18,10 +18,10 @@ const Table = ({ products, handleEdit, handleDelete }) => {
           <tr>
             <th>No.</th>
             <th>Student Name</th>
-            <th>Location</th>
+            <th>Selected By</th>
             <th>Image Link</th>
-            <th>Join Date</th>
-            <th>Released Date</th>
+            <th>Age</th>
+            <th>Enrolled Date</th>
             <th colSpan={2} className="text-center">
               Actions
             </th>
@@ -57,7 +57,7 @@ const Table = ({ products, handleEdit, handleDelete }) => {
             ))
           ) : (
             <tr>
-              <td colSpan={7}>No products</td>
+              <td colSpan={7}>No Student</td>
             </tr>
           )}
         </tbody>

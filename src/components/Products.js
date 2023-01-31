@@ -25,7 +25,7 @@ const Products = () => {
         dispatch(add(product));
         Swal.fire({
             icon: 'success',
-            title: 'Added to cart',
+            title: 'Student seleceted sucessfully',
             showConfirmButton: false,
             timer: 1500,
         });

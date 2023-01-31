@@ -28,7 +28,7 @@ const Products = () => {
                     <h4>{product.title}</h4>
                     <h5>{product.price}</h5>
                     <button onClick={() => handleAdd(product)} className="btn">
-                        Add to cart
+                       Select student
                     </button>
                 </div>
             ))}
