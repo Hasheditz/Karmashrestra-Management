@@ -35,7 +35,7 @@ const Table = ({ products, handleEdit, handleDelete }) => {
                 <td style={{ maxWidth:"10rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.title}</td>
                 <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.createdBy}</td>
                 <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.image}</td>
-                <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{formatter.format(product.price)}</td>
+                <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.price}</td>
                 <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.createdAt} </td>
                 <td className="text-right">
                   <button
