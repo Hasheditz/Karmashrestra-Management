@@ -56,7 +56,7 @@ const Add = ({ products, setproducts, setIsAdding }) => {
           value={title}
           onChange={e => settitle(e.target.value)}
         />
-        <label htmlFor="createdBy">Selected By</label>
+        <label htmlFor="createdBy">Location at University</label>
         <input
           id="createdBy"
           type="text"
