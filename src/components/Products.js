@@ -46,7 +46,7 @@ const Products = () => {
                     <h6 style={{fontSize:"18px",margin:"5px 0",textAlign:"left",color:"#333"}}>{product.title}</h6>
                     <p style={{fontSize:"14px",margin:"0",textAlign:"left",color:"#666"}}>Loaction <strong>{product.createdBy}</strong></p>
                     <p style={{fontSize:"14px",margin:"0",textAlign:"left",color:"#666"}}>Age <strong>{product.price} Year</strong></p>
-                    <p style={{fontSize:"14px",margin:"0",textAlign:"left",color:"#666"}}>Enrolled on <strong>{product.createdAt}</strong></p>
+                    <p style={{fontSize:"14px",margin:"0",textAlign:"left",color:"#666"}}>Enrolled-on <strong>{product.createdAt}</strong></p>
                     <button onClick={() => handleAdd(product)} className="btn">
                         Select
                     </button>

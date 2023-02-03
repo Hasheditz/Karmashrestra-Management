@@ -5,11 +5,11 @@ const Table = ({ products, handleEdit, handleDelete }) => {
     product.id = i + 1;
   });
 
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: null,
-  });
+  // const formatter = new Intl.NumberFormat('en-US', {
+  //   style: 'currency',
+  //   currency: 'USD',
+  //   minimumFractionDigits: null,
+  // });
 
   return (
     <div className="contain-table"  style={{overflowX : 'scroll',width:"100%"}}>
