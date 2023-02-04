@@ -29,7 +29,7 @@ const Header = ({ setIsAdding, setIsAuthenticated }) => {
 	};
 	const [Role, setRole] = useState(false);
 	useEffect(() => {
-	  const role = JSON.parse(localStorage.getItem('role'));
+	  const role = localStorage.getItem('role');
 	  if(role === "admin") setRole(true);
 	}, []);
 	

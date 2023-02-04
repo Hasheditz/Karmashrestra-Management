@@ -11,7 +11,8 @@ const Table = ({ products, handleEdit, handleDelete }) => {
   // });
   const [Role, setRole] = useState(false);
   useEffect(() => {
-    const role = JSON.parse(localStorage.getItem('role'));
+    const role = (localStorage.getItem('role'));
+    console.log(role);
     if(role === "admin") setRole(true);
   }, []);
 
