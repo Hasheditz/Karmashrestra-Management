@@ -22,6 +22,7 @@ const Login = () => {
 			);
 			const dataToStore = await response.json();
 			localStorage.setItem('products_data', JSON.stringify(dataToStore.products));
+			localStorage.setItem('role', "admin");
 			window.location = "/";
 		} catch (error) {
 			if (

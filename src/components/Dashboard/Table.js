@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 const Table = ({ products, handleEdit, handleDelete }) => {
   products.forEach((product, i) => {
     product.id = i + 1;
@@ -10,6 +9,11 @@ const Table = ({ products, handleEdit, handleDelete }) => {
   //   currency: 'USD',
   //   minimumFractionDigits: null,
   // });
+  const [Role, setRole] = useState(false);
+  useEffect(() => {
+    const role = JSON.parse(localStorage.getItem('role'));
+    if(role === "admin") setRole(true);
+  }, []);
 
   return (
     <div className="contain-table"  style={{overflowX : 'scroll',width:"100%"}}>
@@ -22,9 +26,9 @@ const Table = ({ products, handleEdit, handleDelete }) => {
             <th>Image Link</th>
             <th>Age</th>
             <th>Enrolled Date</th>
-            <th colSpan={2} className="text-center">
+            {(Role) && ( <th colSpan={2} className="text-center">
               Actions
-            </th>
+            </th>)}
           </tr>
         </thead>
         <tbody >
@@ -37,7 +41,7 @@ const Table = ({ products, handleEdit, handleDelete }) => {
                 <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.image}</td>
                 <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.price}</td>
                 <td style={{ maxWidth:"20rem", whiteSpace: "nowrap",  overflow: "hidden",textOverflow: "ellipsis"}}>{product.createdAt} </td>
-                <td className="text-right">
+                {(Role) && (<><td className="text-right">
                   <button
                     onClick={() => handleEdit(product.id)}
                     className="button muted-button"
@@ -52,7 +56,7 @@ const Table = ({ products, handleEdit, handleDelete }) => {
                   >
                     Delete
                   </button>
-                </td>
+                </td></>)}
               </tr>
             ))
           ) : (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
@@ -27,7 +27,11 @@ const Header = ({ setIsAdding, setIsAuthenticated }) => {
 			console.log(error);
 		}
 	};
-  
+	const [Role, setRole] = useState(false);
+	useEffect(() => {
+	  const role = JSON.parse(localStorage.getItem('role'));
+	  if(role === "admin") setRole(true);
+	}, []);
 	
   
   return (
@@ -38,7 +42,7 @@ const Header = ({ setIsAdding, setIsAuthenticated }) => {
 							<p style={{ padding: "0 5px" }}>Login Page</p>
 						</Link>
 						|
-						<Link to="/products" style={{ alignSelf: "flex-start",color: "#4e54c8" }}>
+						<Link to="/students" style={{ alignSelf: "flex-start",color: "#4e54c8" }}>
 							<p style={{ padding: "0 5px" }}>Student Page</p>
 						</Link>
 		</div>
@@ -47,9 +51,9 @@ const Header = ({ setIsAdding, setIsAuthenticated }) => {
         <button className="muted-button" onClick={handleLogout}>
 					Logout
 				</button>
-        <button className="muted-button" onClick={handleUpload}>
+				{(Role) && (<button className="muted-button" onClick={handleUpload}>
 					Upload On Database
-				</button>
+				</button>)}
       </div>
     </header>
   );

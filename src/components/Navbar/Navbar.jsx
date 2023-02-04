@@ -15,7 +15,7 @@ const Navbar = () => {
         >
             <span className="logo">Karmashrestra</span>
             <div style={{margin:"0 20px"}}>
-                <Link className="navLink" to="/products">
+                <Link className="navLink" to="/students">
                     Home
                 </Link>
                 <Link className="navLink" to="/cart">
