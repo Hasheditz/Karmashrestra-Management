@@ -17,12 +17,12 @@ const Login = () => {
 			const url = "https://courageous-sun-hat-bee.cyclic.app/api/auth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
+			localStorage.setItem('role',  res.role);
 			const response = await fetch(
 				'https://courageous-sun-hat-bee.cyclic.app/api/product'
 			);
 			const dataToStore = await response.json();
 			localStorage.setItem('products_data', JSON.stringify(dataToStore.products));
-			localStorage.setItem('role',  "admin");
 			window.location = "/";
 		} catch (error) {
 			if (
@@ -64,7 +64,7 @@ const Login = () => {
 							<p style={{ padding: "0 5px" }}>Forgot Password</p>
 						</Link>
 						|
-						<Link to="/products" style={{ alignSelf: "flex-start",color: "#4e54c8" }}>
+						<Link to="/students" style={{ alignSelf: "flex-start",color: "#4e54c8" }}>
 							<p style={{ padding: "0 5px" }}>Student Page</p>
 						</Link>
 						</div>

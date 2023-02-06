@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 const Header = ({ setIsAdding, setIsAuthenticated }) => {
   const handleLogout = () => {
 		localStorage.removeItem("token");
+		localStorage.removeItem("role");
 		window.location.reload();
 	};
 
